@@ -18,7 +18,22 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        return parent::index();
+        // return parent::index();
+        $repo=$this->getDoctrine()->getRepository(User::class);
+        $repoProduct=$this->getDoctrine()->getRepository(Product::class);
+        $repoCat=$this->getDoctrine()->getRepository(Category::class);
+        $categories=$repoCat->findAll();
+        $nbCat=count($categories);
+        $products=$repoProduct->findAll();
+        $nbProduct=count($products);
+        $users=$repo->findAll();
+        $usersLenght=count($users);
+        // dd($usersLenght);
+        return $this->render('bundles/EasyAdminBundle/welcome.html.twig',[
+            'nbUsers'=>$usersLenght,
+            'nbProduct'=>$nbProduct,
+            'nbCat'=>$nbCat
+        ]);
     }
 
     public function configureDashboard(): Dashboard

@@ -1,0 +1,38 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block content_title 'Administration' %}
+
+{% block main %}
+    <div class="row">
+    <div class="col-sm-4">
+    <div class="card text-white bg-dark mb-3">
+        <div class="card-header text-center">Utilisateurs</div>
+            <div class="card-body">
+                <h1 class="display-1 m-5 text-center text-white">{{ nbUsers }}</h5>
+
+                    
+            </div>
+        </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-white bg-primary mb-3">
+        <div class="card-header text-center">Catégories</div>
+            <div class="card-body">
+                <h1 class="display-1 m-5 text-center text-white">{{ nbCat }}</h5>
+
+                    
+            </div>
+        </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-white bg-warning mb-3">
+    <div class="card-header text-center">Produits</div>
+      <div class="card-body">
+        <h1 class="display-1 m-5 text-center text-white">{{ nbProduct }}</h5>
+        
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
